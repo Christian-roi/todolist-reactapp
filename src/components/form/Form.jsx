@@ -20,7 +20,10 @@ function Form({ setTodos, todos }) {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    if (todo.title.trim() === "" || todo.body.trim() === "") return;
+    if (todo.title.trim() === "" || todo.body.trim() === "") {
+      alert("Please fill all the fields in the form");
+      return;
+    }
     setTodos([...todos, { ...todo, id: number }]);
     setTodo(initialState);
     number++;
